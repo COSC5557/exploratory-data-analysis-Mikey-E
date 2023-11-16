@@ -33,7 +33,7 @@
 
 \section{Introduction} %What problem are you solving, how are you going to solve it.
 
-Exploratory data analysis is an important consideration before creating machine-learning models. It can affect the choice of model, the choice of features to prune, or whether samples should be modified or deleted. This report examines the charactersistic of the wine quality dataset\footnote{https://archive.ics.uci.edu/dataset/186/wine+quality}.
+Exploratory data analysis is an important consideration before creating machine-learning models. It can affect the choice of model, the choice of features to prune, or whether samples should be modified or deleted. This report examines the charactersistic of the wine quality dataset\footnote{https://archive.ics.uci.edu/dataset/186/wine+quality}. The dataset explored is created by concatenating both the red and white wine datasets together. Later, the class distributions for each of red and white are individually examined.
 
 \section{Analysis and its Results}
 
@@ -61,6 +61,8 @@ From here, one can spot free sulphur dioxide and total sulfur dioxide as highly 
 A third reason to know the correlations is to see which features are correlated with the target, as this provides direct insight into which features are influential at changing the target and thus tell something to a model about what target to predict.
 
 \subsection{Class Density Distributions}
+
+\subsubsection{Concatenated Dataset}
 
 An important part of exploratory data analysis involving continuous features and a classification target is to plot the density functions of each class along each feature in the same graph, to see how much separation a feature may give between the classes. This visually shows the differences in features between the classes.
 
@@ -91,6 +93,59 @@ An important part of exploratory data analysis involving continuous features and
 
 There is not complete separation given by any feature. However there is still some healthy separation in chlorides, volatile acidity, free sulfur dioxide, total sulfur dioxide, and residual sugar. These will be features that are likely to be of most use in classification.
 
+\subsubsection{Red and White Datasets}
+
+This section plots density functions for each color individually, to see which features may give good separation between quality levels. Red is examined first.
+
+\includegraphics[scale=\myscale]{red_quality_dist_alcohol.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_chlorides.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_citric_acid.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_density.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_fixed_acidity.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_free_sulfur_dioxide.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_pH.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_residual_sugar.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_sulphates.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_total_sulfur_dioxide.png}
+
+\includegraphics[scale=\myscale]{red_quality_dist_volatile_acidity.png}
+
+What is most prominent is the difference between low quality wines (blue) and high quality wines (purple). Low quality wines tend to especially have low alcohol, citric acid, free/total sulfur dioxide, and high volatile acidity. High quality wines tend to have the opposite.
+
+White wine is examined next.
+
+\includegraphics[scale=\myscale]{white_quality_dist_alcohol.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_chlorides.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_citric_acid.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_density.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_fixed_acidity.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_free_sulfur_dioxide.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_pH.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_residual_sugar.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_sulphates.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_total_sulfur_dioxide.png}
+
+\includegraphics[scale=\myscale]{white_quality_dist_volatile_acidity.png}
+
+For white, low quality wines tend to have high fixed acidity, high volatile acidity, high free/total sulfur dioxide.
 
 \section{Code} %Add the code you've used as a separate file.
 
